@@ -13,7 +13,7 @@ redis-cli -c -h 192.168.111.111
 ( then 6379 port changed automaticaly 7001-7009 ) 
 
 
-you should see like this;
+you should see like this for list all keys in cluster.
 
 ```
 redis-cli --cluster call 192.168.111.111:6379 keys "*"
