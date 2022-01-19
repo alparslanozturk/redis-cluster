@@ -1,2 +1,5 @@
 # redis-cluster
-redis cluster with docker
+
+This bash script create a redis cluster with 9 docker container. 
+
+
