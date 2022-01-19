@@ -40,3 +40,16 @@ For check, fix, reshard, del-node, set-timeout you can specify the host and port
 
 
 ```
+
+
+
+
+
+reshardin -> tüm slotları bir node üzerine taşıma işlemidir.  16384 slot on node1 
+
+![image](https://user-images.githubusercontent.com/9527118/150097794-970493f2-646e-42da-820d-4bd63400deb2.png)
+
+
+rebalancing -> 
+
+galiba replicalar üzerinde keylerin dağıtımını yapıyor. 
