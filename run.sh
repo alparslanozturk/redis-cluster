@@ -18,14 +18,14 @@ EOF
 
 
 ### delete
-for i in {1..9}; do docker rm --force redis$i; done
+for i in {9..1}; do docker rm --force redis$i; done
 docker network rm redis
 rm -rf 700?/
 
 
 ### create
 docker network create --subnet 172.72.72.0/24 redis 
-for i in {1..9} 
+for i in {9..1} 
 do
  port=700$i
  mkdir $port
