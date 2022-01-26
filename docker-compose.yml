@@ -1,0 +1,117 @@
+version: "3"
+
+services:
+  redis1: &redis
+    image: redis
+    hostname: redis1
+    container_name: redis1
+    networks:
+      redis:
+        ipv4_address: 172.72.72.11
+    ports:
+      - 6379:7001
+      - 7001:7001
+      - 17001:17001
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7001"]
+
+  redis2:
+    <<: *redis
+    hostname: redis2
+    container_name: redis2
+    networks:
+      redis:
+        ipv4_address: 172.72.72.12
+    ports:
+      - 7002:7002
+      - 17002:17002
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7002"]
+
+  redis3:
+    <<: *redis
+    hostname: redis3
+    container_name: redis3
+    networks:
+      redis:
+        ipv4_address: 172.72.72.13
+    ports:
+      - 7003:7003
+      - 17003:17003
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7003"]
+
+  redis4:
+    <<: *redis
+    hostname: redis4
+    container_name: redis4
+    networks:
+      redis:
+        ipv4_address: 172.72.72.14
+    ports:
+      - 7004:7004
+      - 17004:17004
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7004"]
+
+  redis5:
+    <<: *redis
+    hostname: redis5
+    container_name: redis5
+    networks:
+      redis:
+        ipv4_address: 172.72.72.15
+    ports:
+      - 7005:7005
+      - 17005:17005
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7005"]
+
+  redis6:
+    <<: *redis
+    hostname: redis6
+    container_name: redis6
+    networks:
+      redis:
+        ipv4_address: 172.72.72.16
+    ports:
+      - 7006:7006
+      - 17006:17006
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7006"]
+
+  redis7:
+    <<: *redis
+    hostname: redis7
+    container_name: redis7
+    networks:
+      redis:
+        ipv4_address: 172.72.72.17
+    ports:
+      - 7007:7007
+      - 17007:17007
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7007"]
+
+  redis8:
+    <<: *redis
+    hostname: redis8
+    container_name: redis8
+    networks:
+      redis:
+        ipv4_address: 172.72.72.18
+    ports:
+      - 7008:7008
+      - 17008:17008
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7008"]
+
+  redis9:
+    <<: *redis
+    hostname: redis9
+    container_name: redis9
+    networks:
+      redis:
+        ipv4_address: 172.72.72.19
+    ports:
+      - 7009:7009
+      - 17009:17009
+    command: ["redis-server", "--protected-mode no", "--appendonly no", "--save ''", "--cluster-enabled yes", "--bind 0.0.0.0", "--cluster-announce-ip 192.168.111.111", "--port 7009"]
+
+networks:
+  redis:
+    ipam:
+      config:
+        - subnet: 172.72.72.0/24
